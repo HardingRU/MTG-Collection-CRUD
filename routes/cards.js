@@ -10,7 +10,9 @@ cardsRouter.post('/', cardsController.create, viewsController.cardCreate);
 
 cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, viewsController.showAddForm);
 
-cardsRouter.get('/:id', cardsController.getCard, views.showCard);
-// cardsRouter.get('/:id', )
+cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);
+cardsRouter.put('/:id', cardsController.update, viewsController.updateCard);
+
+cardsRouter.get('/:id/edit', setsController.index, cardsController.getCard, viewsController.showEditForm)
 
 module.exports = cardsRouter;

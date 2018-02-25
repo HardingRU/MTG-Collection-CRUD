@@ -37,6 +37,26 @@ module.exports = {
     };
     res.locals.card = blankCard;
     next();
+  },
+
+  getCard(req, res, next) {
+    cardsDB.findById(req.params.id)
+      .then((card) => {
+        res.locals.card = card;
+        next();
+      })
+      .catch(err => next(err));
+  },
+
+  update(req, res, next) {
+    //req.body.id = data.id;
+    req.body.id = req.params.id;
+    cardsDB.update(req.body)
+      .then((card) => {
+        res.locals.card = card;
+        next();
+      })
+      .catch(err => next(err));
   }
 
 }

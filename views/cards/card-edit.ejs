@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="POST" action="/cards/<%= card.id %>?_method=PUT">
+      <!-- passing id as a part of the body, but the input field is set to hidden, so not to render on the page -->
+      <input name="name" type="text" value="<%= data.name %>" />
+      <input name="mana_cost" type="text" value="<%= data.mana_cost %>" />
+      <input name="colors" type="text" value="<%= data.colors %>" />
+      <input name="rarity" type="text" value="<%= data.rarity %>" />
+      <input name="type" type="text" value="<%= data.type %>" />
+      <input name="card_text" type="text" value="<%= data.card_text %>" />
+      <input name="attack" type="text" value="<%= data.attack %>" />
+      <input name="defense" type="text" value="<%= data.defense %>" />
+      <input name="img_url" type="text" value="<%= data.img_url %>" />
+      <input name="num_cards" type="text" value="<%= data.num_cards %>" />
+      <select name="set_id">
+        <% sets.forEach(set => { %>
+        <option value=<%=set.id%> <%= set.id === data.set_id ? 'selected' : '' %>>
+        <%=set.name%>
+        </option>
+        <% }) %>
+      </select>
+      <input type="submit" value="Edit it!" />
+    </form>
+
+  </body>
+</html>
