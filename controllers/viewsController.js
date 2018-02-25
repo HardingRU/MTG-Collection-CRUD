@@ -3,5 +3,8 @@ module.exports = {
     res.render('cards/card-index', {
       data: res.locals.cards
     })
+  },
+  cardCreate(req, res) {
+    res.redirect('/cards')
   }
 }

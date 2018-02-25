@@ -1,7 +1,7 @@
 \c mtg;
 
 INSERT INTO sets (set_name) VALUES ('Khans of Tarkhir');
-INSERT INTO cards (name, mana_cost, color, rarity, type, card_text, attack, defense, img_url, num_cards, set_id) VALUES
+INSERT INTO cards (name, mana_cost, colors, rarity, type, card_text, attack, defense, img_url, num_cards, set_id) VALUES
   (
     'Narset, Enlightened Master',
     '{3}{U}{R}{W}',

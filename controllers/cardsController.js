@@ -8,5 +8,16 @@ module.exports = {
       next();
     })
     .catch(err => next(err));
+  },
+
+  create(req, res, next) {
+    console.log(req.body, 'body');
+    cardsDB.save(req.body)
+      .then((quote) => {
+        res.locals.card = req.body;
+        next();
+      })
+      .catch(err => next(err));
   }
+
 }
