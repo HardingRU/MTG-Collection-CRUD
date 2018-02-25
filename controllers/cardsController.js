@@ -11,15 +11,16 @@ module.exports = {
   },
 
   create(req, res, next) {
+    req.body.num_cards = 1;
     console.log(req.body, 'body');
     cardsDB.save(req.body)
-      .then((quote) => {
-        res.locals.card = req.body;
+      .then((card) => {
+        res.locals.card = card;
         next();
       })
       .catch(err => next(err));
   },
-  
+
   makeBlankCard(req, res, next) {
     const blankCard = {
       name: null,

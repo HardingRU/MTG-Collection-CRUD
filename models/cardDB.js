@@ -8,7 +8,6 @@ module.exports = {
     return db.many(`SELECT * from cards`);
   },
   save(card) {
-    console.log("card" + card)
     return db.one(`
       INSERT INTO cards (name, mana_cost, colors, rarity, type, card_text, attack, defense, img_url, num_cards, set_id)
       VALUES ($[name], $[mana_cost], $[colors], $[rarity], $[type], $[card_text], $[attack], $[defense], $[img_url], $[num_cards], $[set_id])
