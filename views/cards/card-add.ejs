@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="POST" action="/cards">
+      <input name="name" type="text" placeholder="Name" />
+      <input name="mana_cost" type="text" placeholder="Mana Cost" />
+      <input name="colors" type="text" placeholder="Color(s)" />
+      <input name="rarity" type="text" placeholder="Rarity" />
+      <input name="type" type="text" placeholder="Type" />
+      <input name="card_text" type="text" placeholder="Card Text" />
+      <input name="attack" type="text" placeholder="10" />
+      <input name="defense" type="text" placeholder="15" />
+      <input name="img_url" type="text" placeholder="Image URL" />
+      <select name="set_id">
+        <% sets.forEach(set => { %>
+        <option value=<%=set.id%>> <%=set.set_name%></option>
+        <% }) %>
+      </select>
+      <input type="submit" value="Add it!" />
+    </form>
+  </body>
+</html>

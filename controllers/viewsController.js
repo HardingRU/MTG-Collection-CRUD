@@ -6,5 +6,9 @@ module.exports = {
   },
   cardCreate(req, res) {
     res.redirect('/cards')
+  },
+  showAddForm(req, res) {
+    console.log(res.locals.card);
+    res.render('cards/card-add');
   }
 }

@@ -18,6 +18,24 @@ module.exports = {
         next();
       })
       .catch(err => next(err));
+  },
+  
+  makeBlankCard(req, res, next) {
+    const blankCard = {
+      name: null,
+    	mana_cost: null,
+    	colors: null,
+    	rarity: null,
+    	type: null,
+    	card_text: null,
+    	attack: null,
+    	defense : null,
+    	img_url : null,
+    	num_cards : null,
+    	set_id: null
+    };
+    res.locals.card = blankCard;
+    next();
   }
 
 }
