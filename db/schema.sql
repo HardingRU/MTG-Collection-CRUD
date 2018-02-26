@@ -17,11 +17,12 @@ CREATE TABLE cards (
   colors VARCHAR(255),
   rarity VARCHAR(255),
   type VARCHAR(255),
-  card_text VARCHAR(255),
+  card_text TEXT,
   attack VARCHAR(255),
   defense VARCHAR(255),
   img_url VARCHAR(255),
   num_cards INT,
+  api_id INT,
   set_id INTEGER REFERENCES sets
 );
 
