@@ -2,7 +2,8 @@
 
     <main>
       <% cards.forEach(card => { %>
-      <h1><%= card.name %>  <%= card.num_cards %></h1>
+        <% const cardLink = "/cards/" + card.id %>
+      <h1><a href=<%= cardLink %>> <%= card.name %></a> Owned: <%= card.num_cards %>x</h1>
       <% }) %>
     </main>
 

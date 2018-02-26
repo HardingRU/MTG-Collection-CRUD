@@ -23,10 +23,14 @@ module.exports = {
   updateCard(req, res) {
     res.redirect(`/cards/${req.params.id}`);
   },
-  
+
   showEditForm(req, res) {
     res.render('cards/card-edit', {
       data: res.locals.card,
     });
+  },
+
+  deleteCard(req, res) {
+    res.redirect('/cards');
   }
 }

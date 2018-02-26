@@ -12,6 +12,7 @@ cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, vie
 
 cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);
 cardsRouter.put('/:id', cardsController.update, viewsController.updateCard);
+cardsRouter.delete('/:id', cardsController.destroyCard, viewsController.deleteCard);
 
 cardsRouter.get('/:id/edit', setsController.index, cardsController.getCard, viewsController.showEditForm)
 

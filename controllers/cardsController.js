@@ -57,6 +57,12 @@ module.exports = {
         next();
       })
       .catch(err => next(err));
+  },
+
+  destroyCard(req, res, next) {
+    cardsDB.kill(req.params.id)
+      .then(() => next())
+      .catch(err => next(err));
   }
 
 }

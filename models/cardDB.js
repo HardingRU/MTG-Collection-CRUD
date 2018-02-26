@@ -36,5 +36,8 @@ module.exports = {
       WHERE id = $[id]
       RETURNING *
       `, card);
+  },
+  kill(id) {
+    return db.none(`DELETE FROM cards WHERE id = $1`, id);
   }
 }
