@@ -3,7 +3,7 @@
     <main>
       <% cards.forEach(card => { %>
         <% const cardLink = "/cards/" + card.id %>
-      <h1><a href=<%= cardLink %>> <%= card.name %></a> Owned: <%= card.num_cards %>x</h1>
+      <h1><a href=<%= cardLink %>> <%= card.name %></a></h1>
       <form action="/cards/<%= card.id %>?_method=Delete" method="Post">
         <input type="Submit" value="Delete"/>
       </form>

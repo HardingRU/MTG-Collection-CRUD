@@ -9,8 +9,8 @@ module.exports = {
   },
   save(card) {
     return db.one(`
-      INSERT INTO cards (name, mana_cost, colors, rarity, type, card_text, attack, defense, img_url, num_cards, set_id)
-      VALUES ($[name], $[mana_cost], $[colors], $[rarity], $[type], $[card_text], $[attack], $[defense], $[img_url], $[num_cards], $[set_id])
+      INSERT INTO cards (name, mana_cost, colors, rarity, type, card_text, attack, defense, img_url, num_cards, api_id, set_id)
+      VALUES ($[name], $[mana_cost], $[colors], $[rarity], $[type], $[card_text], $[attack], $[defense], $[img_url], $[num_cards], $[api_id], $[set_id])
       RETURNING *
       `, card);
   },

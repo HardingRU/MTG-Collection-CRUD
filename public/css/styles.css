@@ -11,3 +11,7 @@ footer {
 .cardItem {
   display: inline;
 }
+
+.packCard {
+  display: inline-block;
+}

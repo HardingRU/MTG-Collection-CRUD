@@ -1,14 +1,11 @@
 $(()=>{
-  console.log('script loaded');
 
   $("#searchButton").on("click", function() {
-    console.log('Searching');
     let searchString = $("#searchInput").val();
     $.ajax({
       url: `https://api.magicthegathering.io/v1/cards?name=${searchString}`,
       method: 'GET',
       success: (data) => {
-        console.log(data)
         showResults(data)
       }
     })
@@ -29,13 +26,11 @@ $(()=>{
       $('#div'+card.multiverseid).append("<br>")
       $('#div'+card.multiverseid).append(`<button type="button" class="addClass" id="` + card.multiverseid + `"> Add Card </button>`)
       $('#'+card.multiverseid).on('click',function(){
-        console.log("Add Card")
         cardToAdd = card.multiverseid;
         $.ajax({
           url: `https://api.magicthegathering.io/v1/cards/${cardToAdd}`,
           method: 'GET',
           success: (data) => {
-            console.log(data["card"])
             let cardArray = data["card"]
             const newCard = {
               name: cardArray.name,
@@ -47,11 +42,11 @@ $(()=>{
               attack: cardArray.power,
               defense: cardArray.toughness,
               img_url: cardArray.imageUrl,
+              api_id: cardArray.multiverseid,
               num_cards: 1,
               set_id: 1
             }
             //need to add function to find set
-            console.log(newCard)
             addToDB(newCard)
           }
         })
@@ -67,8 +62,6 @@ $(()=>{
       url: '/cards',
       method: 'POST',
       data: newCard
-    }).done(data => {
-      console.log(`New ID ${data.id}`);
     })
   }
 

@@ -8,10 +8,10 @@ const setsController = require('../controllers/setsController');
 cardsRouter.get('/', cardsController.index, viewsController.showCards);
 cardsRouter.post('/', cardsController.create, viewsController.cardCreate);
 
-cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, viewsController.showAddForm);
+//cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, viewsController.showAddForm);
 
 cardsRouter.get('/search', viewsController.search)
-
+  
 cardsRouter.get('/pack', viewsController.openPack)
 
 cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);

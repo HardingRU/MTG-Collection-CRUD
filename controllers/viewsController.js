@@ -40,5 +40,9 @@ module.exports = {
 
   openPack(req, res) {
     res.render('cards/card-pack')
+  },
+
+  showDecks(req, res) {
+    res.render('decks/deck-index')
   }
 }

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 const cardsRouter = require('./routes/cards');
+const decksRouter = require('./routes/decks')
 
 const PORT = process.env.PORT || 3000;
 
@@ -28,6 +29,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/cards', cardsRouter)
+
+app.use('/decks', decksRouter)
 
 app.listen(PORT, (req, res) => {
   console.log("Listening on Port " + PORT);
