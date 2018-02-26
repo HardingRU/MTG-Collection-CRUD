@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MTG Collection</title>
-  </head>
-  <body>
+<% include ../partials/boilerplate %>
+
     <main>
       <% cards.forEach(card => { %>
       <h1><%= card.name %>  <%= card.num_cards %></h1>
       <% }) %>
     </main>
-  </body>
-</html>
+
+<% include ../partials/footer %>
