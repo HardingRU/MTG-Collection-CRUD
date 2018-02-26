@@ -10,6 +10,8 @@ cardsRouter.post('/', cardsController.create, viewsController.cardCreate);
 
 cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, viewsController.showAddForm);
 
+cardsRouter.get('/search', viewsController.search)
+
 cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);
 cardsRouter.put('/:id', cardsController.update, viewsController.updateCard);
 cardsRouter.delete('/:id', cardsController.destroyCard, viewsController.deleteCard);

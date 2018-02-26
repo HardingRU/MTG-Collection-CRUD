@@ -32,5 +32,9 @@ module.exports = {
 
   deleteCard(req, res) {
     res.redirect('/cards');
+  },
+
+  search(req, res) {
+    res.render('cards/card-search')
   }
 }
