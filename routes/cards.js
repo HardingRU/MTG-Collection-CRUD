@@ -12,6 +12,8 @@ cardsRouter.get('/new', setsController.index, cardsController.makeBlankCard, vie
 
 cardsRouter.get('/search', viewsController.search)
 
+cardsRouter.get('/pack', viewsController.openPack)
+
 cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);
 cardsRouter.put('/:id', cardsController.update, viewsController.updateCard);
 cardsRouter.delete('/:id', cardsController.destroyCard, viewsController.deleteCard);

@@ -36,5 +36,9 @@ module.exports = {
 
   search(req, res) {
     res.render('cards/card-search')
+  },
+
+  openPack(req, res) {
+    res.render('cards/card-pack')
   }
 }
