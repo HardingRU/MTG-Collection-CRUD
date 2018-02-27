@@ -9,7 +9,7 @@ module.exports = {
   },
 
   findById(id) {
-    return db.many(`SELECT decks.deck_name, cards.name, cards_decks.num_in_deck FROM cards INNER JOIN cards_decks ON
+    return db.many(`SELECT decks.deck_name, cards.name, cards_decks.num_in_deck, cards_decks.deck_id FROM cards INNER JOIN cards_decks ON
                    cards.id = cards_decks.card_id INNER JOIN
                    decks ON cards_decks.deck_id=decks.id WHERE decks.id = $1`, id);
   },
@@ -22,7 +22,7 @@ module.exports = {
     return db.none(`DELETE FROM decks WHERE id = $1`, id);
   },
 
-  updateDeck(deck) {
-    return db.none()
+  update(deck) {
+    return db.one(`UPDATE decks SET deck_name = $[deck_name] WHERE id = $[id] RETURNING * `, deck);
   }
 }

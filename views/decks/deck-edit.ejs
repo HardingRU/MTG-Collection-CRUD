@@ -1,0 +1,17 @@
+<% include ../partials/boilerplate %>
+
+    <form method="POST" action="/decks/<%= data[0].deck_id %>?_method=PUT">
+      <h4>Deck Name: </h4>
+      <input name="deck_name" type="text" value="<%= data[0].deck_name %>" />
+      <br>
+      <br>
+      <br>
+      <% deck.forEach(deck => { %>
+          <h3 id="deckH3"> <%= deck.name %> </h3>
+          <input class="numCards" name="num_in_deck" type="text" value="<%= deck.num_in_deck %>" />
+          <br>
+      <% }) %>
+      <input type="submit" value="Edit it!" />
+    </form>
+
+<% include ../partials/footer %>

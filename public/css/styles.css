@@ -15,3 +15,7 @@ footer {
 .packCard {
   display: inline-block;
 }
+
+#deckH3 {
+  display: inline-block;
+}

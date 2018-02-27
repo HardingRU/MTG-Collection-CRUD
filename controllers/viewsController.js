@@ -9,7 +9,6 @@ module.exports = {
   },
 
   addCardForm(req, res) {
-    //console.log(res.locals.card);
     res.render('cards/card-add');
   },
 
@@ -23,7 +22,7 @@ module.exports = {
     res.redirect(`/cards/${req.params.id}`);
   },
 
-  showEditForm(req, res) {
+  editCardForm(req, res) {
     res.render('cards/card-edit', {
       data: res.locals.card,
     });
@@ -63,6 +62,17 @@ module.exports = {
   addDeckForm(req, res) {
     //console.log(res.locals.card);
     res.render('decks/deck-add');
+  },
+
+  editDeckForm(req, res) {
+    console.log(res.locals.deck)
+    res.render('decks/deck-edit', {
+      data: res.locals.deck,
+    });
+  },
+
+  updateDeck(req, res) {
+    res.redirect(`/decks/${req.params.id}`);
   }
 
 }

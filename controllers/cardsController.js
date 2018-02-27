@@ -48,8 +48,8 @@ module.exports = {
   },
 
   update(req, res, next) {
-    //req.body.id = data.id;
     req.body.id = req.params.id;
+    console.log(req.body)
     cardsDB.update(req.body)
       .then((card) => {
         res.locals.card = card;

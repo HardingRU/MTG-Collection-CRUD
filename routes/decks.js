@@ -12,7 +12,9 @@ decksRouter.get('/new', decksController.makeBlankDeck, viewsController.addDeckFo
 
 decksRouter.get('/:id', decksController.getDeck, viewsController.showDeck);
 
-//decksRouter.put('/:id', decksController.update, viewsController.updateDeck);
+decksRouter.put('/:id', decksController.update, viewsController.updateDeck);
 decksRouter.delete('/:id', decksController.destroyDeck, viewsController.deleteDeck);
+
+decksRouter.get('/:id/edit', decksController.getDeck, viewsController.editDeckForm)
 
 module.exports = decksRouter;

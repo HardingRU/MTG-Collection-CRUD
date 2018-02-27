@@ -40,6 +40,17 @@ module.exports = {
     };
     res.locals.card = blankDeck;
     next();
+  },
+
+  update(req, res, next) {
+    //req.body.id = data.id;
+    req.body.id = req.params.id;
+    decksDB.update(req.body)
+      .then((deck) => {
+        res.locals.deck = deck;
+        next();
+      })
+      .catch(err => next(err));
   }
 
 

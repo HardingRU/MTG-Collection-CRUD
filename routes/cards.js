@@ -18,6 +18,6 @@ cardsRouter.get('/:id', cardsController.getCard, viewsController.showCard);
 cardsRouter.put('/:id', cardsController.update, viewsController.updateCard);
 cardsRouter.delete('/:id', cardsController.destroyCard, viewsController.deleteCard);
 
-cardsRouter.get('/:id/edit', setsController.index, cardsController.getCard, viewsController.showEditForm)
+cardsRouter.get('/:id/edit', cardsController.getCard, viewsController.editCardForm)
 
 module.exports = cardsRouter;
