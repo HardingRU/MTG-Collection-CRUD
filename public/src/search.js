@@ -34,17 +34,17 @@ $(()=>{
             let cardArray = data["card"]
             const newCard = {
               name: cardArray.name,
-              mana_cost: cardArray.manaCost,
+              mana_cost: cardArray.manaCost || null,
               colors: "White",
               rarity: cardArray.rarity,
               type: cardArray.type,
-              card_text: cardArray.text,
-              attack: cardArray.power,
-              defense: cardArray.toughness,
+              card_text: cardArray.text || null,
+              attack: cardArray.power || null,
+              defense: cardArray.toughness || null,
               img_url: cardArray.imageUrl,
               api_id: cardArray.multiverseid,
               num_cards: 1,
-              set_id: 1
+              set_name: cardArray.setName
             }
             //need to add function to find set
             addToDB(newCard)

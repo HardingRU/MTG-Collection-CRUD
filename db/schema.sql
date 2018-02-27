@@ -1,14 +1,8 @@
 \c mtg;
 
-DROP TABLE IF EXISTS sets;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS decks;
 DROP TABLE IF EXISTS cards_decks;
-
-CREATE TABLE sets (
-  id SERIAL PRIMARY KEY,
-  set_name VARCHAR(255)
-);
 
 CREATE TABLE cards (
   id SERIAL PRIMARY KEY,
@@ -23,7 +17,7 @@ CREATE TABLE cards (
   img_url VARCHAR(255),
   num_cards INT,
   api_id INT,
-  set_id INTEGER REFERENCES sets
+  set_name VARCHAR(255)
 );
 
 CREATE TABLE decks (
