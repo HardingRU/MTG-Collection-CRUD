@@ -1,7 +1,12 @@
 <% include ../partials/boilerplate %>
 
     <div>
-      <h1><%= deck.deck_name %></h1>
+      <h1><%= deck[0].deck_name %></h1>
+
+      <% deck.forEach(deck => { %>
+          <h3> <%= deck.name %> </h3>
+
+      <% }) %>
 
       <a href='/decks'>Back to Decks</a>
     </div>

@@ -2,8 +2,8 @@
 
 <main>
   <% decks.forEach(deck => { %>
-    <% const cardLink = "/decks/" + deck.id %>
-  <h1><a href=<%= cardLink %>> <%= deck.deck_name %></a></h1>
+    <% const deckLink = "/decks/" + deck.id %>
+  <h1><a href=<%= deckLink %>> <%= deck.deck_name %></a></h1>
   <form action="/decks/<%= deck.id %>?_method=Delete" method="Post">
     <input type="Submit" value="Delete"/>
   </form>

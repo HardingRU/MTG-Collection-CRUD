@@ -32,7 +32,7 @@ CREATE TABLE decks (
 );
 
 CREATE TABLE cards_decks (
-  deck_id SERIAL PRIMARY KEY,
+  deck_id INT,
   card_id INT,
-  num_cards INT
+  num_in_deck INT
 );

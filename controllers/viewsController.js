@@ -8,7 +8,7 @@ module.exports = {
     res.redirect('/cards')
   },
 
-  showAddForm(req, res) {
+  addCardForm(req, res) {
     //console.log(res.locals.card);
     res.render('cards/card-add');
   },
@@ -46,8 +46,23 @@ module.exports = {
   },
 
   showDeck(req, res) {
+    console.log(res.locals.deck)
     res.render('decks/deck-single', {
       data: res.locals.deck,
     });
+  },
+
+  deckCreate(req, res) {
+    res.redirect('/decks')
+  },
+
+  deleteDeck(req, res) {
+    res.redirect('/decks');
+  },
+
+  addDeckForm(req, res) {
+    //console.log(res.locals.card);
+    res.render('decks/deck-add');
   }
+
 }
