@@ -14,7 +14,6 @@ module.exports = {
   },
 
   showCard(req, res) {
-    console.log(res.locals.card.img_url)
     res.render('cards/card-single', {
       data: res.locals.card,
     });
@@ -44,5 +43,11 @@ module.exports = {
 
   showDecks(req, res) {
     res.render('decks/deck-index')
+  },
+
+  showDeck(req, res) {
+    res.render('decks/deck-single', {
+      data: res.locals.deck,
+    });
   }
 }

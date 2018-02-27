@@ -1,5 +1,13 @@
 <% include ../partials/boilerplate %>
 
-<h1> Welcome to the deck index </h1>
+<main>
+  <% decks.forEach(deck => { %>
+    <% const cardLink = "/decks/" + deck.id %>
+  <h1><a href=<%= cardLink %>> <%= deck.deck_name %></a></h1>
+  <form action="/decks/<%= deck.id %>?_method=Delete" method="Post">
+    <input type="Submit" value="Delete"/>
+  </form>
+  <% }) %>
+</main>
 
 <% include ../partials/footer %>
