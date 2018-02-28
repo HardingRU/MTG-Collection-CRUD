@@ -9,7 +9,7 @@ module.exports = {
   },
 
   findById(id) {
-    return db.many(`SELECT decks.deck_name, cards.name, cards_decks.num_in_deck, cards_decks.deck_id FROM cards INNER JOIN cards_decks ON
+    return db.many(`SELECT cards_decks.card_id, decks.deck_name, cards.name, cards_decks.num_in_deck, cards_decks.deck_id FROM cards INNER JOIN cards_decks ON
                    cards.id = cards_decks.card_id INNER JOIN
                    decks ON cards_decks.deck_id=decks.id WHERE decks.id = $1`, id);
   },
@@ -24,5 +24,14 @@ module.exports = {
 
   update(deck) {
     return db.one(`UPDATE decks SET deck_name = $[deck_name] WHERE id = $[id] RETURNING * `, deck);
+  },
+
+  addToDeck(addition) {
+    return db.one(`INSERT INTO cards_decks (deck_id, card_id, num_in_deck) VALUES ($[deckToAdd], $[cardToAdd], 1) RETURNING *`, addition)
+  },
+
+  editNumCards(changes) {
+    console.log(changes)
+    return db.one(`UPDATE cards_decks SET num_in_deck = $[number] WHERE card_id = $[card_id] RETURNING * `, changes);
   }
 }

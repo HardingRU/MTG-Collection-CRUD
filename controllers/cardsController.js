@@ -11,7 +11,6 @@ module.exports = {
   },
 
   create(req, res, next) {
-    req.body.num_cards = 1;
     cardsDB.save(req.body)
       .then((card) => {
         res.locals.card = card;

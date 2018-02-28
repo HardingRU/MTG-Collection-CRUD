@@ -1,17 +1,25 @@
 $(()=>{
-  console.log('script loaded');
+
 
   $("#openPack").on("click", function() {
-    console.log('Opening Pack');
+    const packSelect = $("#setSelect").val();
     $.ajax({
-      url: `https://api.magicthegathering.io/v1/sets/ktk/booster`,
+      url: `/cards/data`,
+      method: 'GET',
+      success: (data2) => {
+        console.log(data2)
+      }
+    })
+    $.ajax({
+      url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
       method: 'GET',
       success: (data) => {
-        console.log(data)
         processPack(data)
       }
     })
   })
+
+
 
   const processPack = data => {
     $('div').remove();
@@ -27,7 +35,7 @@ $(()=>{
       const newCard = {
         name: card.name,
         mana_cost: card.manaCost || null,
-        colors: "White",
+        colors: "COLOR",
         rarity: card.rarity,
         type: card.type,
         card_text: card.text || null,
@@ -36,10 +44,9 @@ $(()=>{
         img_url: card.imageUrl,
         api_id: card.multiverseid,
         num_cards: 1,
-        set_name: card.setName || null
+        set_name: card.setName || "Set Unknown"
       }
-      console.log(newCard);
-      console.log("api_id -> " + newCard.api_id)
+      console.log(newCard)
       addToDB(newCard)
     })
   }

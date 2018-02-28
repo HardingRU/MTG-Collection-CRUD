@@ -14,6 +14,7 @@ module.exports = {
     decksDB.findById(req.params.id)
       .then((deck) => {
         res.locals.deck = deck;
+        res.locals.deckid = req.params.id;
         next();
       })
       .catch(err => next(err));
@@ -43,9 +44,26 @@ module.exports = {
   },
 
   update(req, res, next) {
-    //req.body.id = data.id;
     req.body.id = req.params.id;
     decksDB.update(req.body)
+      .then((deck) => {
+        res.locals.deck = deck;
+        next();
+      })
+      .catch(err => next(err));
+  },
+
+  addToDeck(req, res, next) {
+    decksDB.addToDeck(req.body)
+      .then((deck) => {
+        res.locals.deck = deck;
+        next();
+      })
+      .catch(err => next(err));
+  },
+
+  saveDeck(req, res, next) {
+    decksDB.editNumCards(req.body)
       .then((deck) => {
         res.locals.deck = deck;
         next();

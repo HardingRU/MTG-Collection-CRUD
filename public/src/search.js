@@ -1,3 +1,5 @@
+
+
 $(()=>{
 
   $("#searchButton").on("click", function() {
@@ -44,7 +46,7 @@ $(()=>{
               img_url: cardArray.imageUrl,
               api_id: cardArray.multiverseid,
               num_cards: 1,
-              set_name: cardArray.setName
+              set_name: cardArray.setName || "Set Unknown"
             }
             //need to add function to find set
             addToDB(newCard)

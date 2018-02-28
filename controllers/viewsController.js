@@ -65,7 +65,6 @@ module.exports = {
   },
 
   editDeckForm(req, res) {
-    console.log(res.locals.deck)
     res.render('decks/deck-edit', {
       data: res.locals.deck,
     });
@@ -73,6 +72,15 @@ module.exports = {
 
   updateDeck(req, res) {
     res.redirect(`/decks/${req.params.id}`);
+  },
+
+  jsonCards(req, res) {
+    res.json(res.locals.cards)
+  },
+
+  deckEditRedirect(req, res) {
+    console.log("deck ID ---> " + res.locals.deck.deck_id)
+    res.redirect(`/decks/${res.locals.deck.deck_id}/edit`)
   }
 
 }

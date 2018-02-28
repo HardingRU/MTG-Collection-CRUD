@@ -16,7 +16,7 @@ CREATE TABLE cards (
   defense VARCHAR(255),
   img_url VARCHAR(255),
   num_cards INT,
-  api_id INT,
+  api_id INT UNIQUE,
   set_name VARCHAR(255)
 );
 
@@ -27,6 +27,6 @@ CREATE TABLE decks (
 
 CREATE TABLE cards_decks (
   deck_id INT,
-  card_id INT,
+  card_id INT UNIQUE,
   num_in_deck INT
 );

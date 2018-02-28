@@ -19,3 +19,15 @@ footer {
 #deckH3 {
   display: inline-block;
 }
+
+.collectionAdd {
+  display: inline-block;
+}
+
+.deckDiv {
+  display: inline-block;
+}
+
+#getDeckID {
+  display: none;
+}
