@@ -50,6 +50,7 @@ $(()=>{
             }
             //need to add function to find set
             addToDB(newCard)
+            window.location.href="/cards"
           }
         })
       })

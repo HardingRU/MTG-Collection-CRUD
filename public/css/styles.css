@@ -24,10 +24,17 @@ footer {
   display: inline-block;
 }
 
-.deckDiv {
-  display: inline-block;
-}
-
 #getDeckID {
   display: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#tableDiv {
+  height: 250px;
+  width: 1200px;
+  overflow-y: auto;
+  overflow-x: auto;
 }

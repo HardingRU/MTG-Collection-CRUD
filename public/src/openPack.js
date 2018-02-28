@@ -4,13 +4,6 @@ $(()=>{
   $("#openPack").on("click", function() {
     const packSelect = $("#setSelect").val();
     $.ajax({
-      url: `/cards/data`,
-      method: 'GET',
-      success: (data2) => {
-        console.log(data2)
-      }
-    })
-    $.ajax({
       url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
       method: 'GET',
       success: (data) => {
