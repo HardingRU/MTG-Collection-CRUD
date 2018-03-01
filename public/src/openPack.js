@@ -37,7 +37,7 @@ $(()=>{
         img_url: card.imageUrl,
         api_id: card.multiverseid,
         num_cards: 1,
-        set_name: card.setName || "Set Unknown"
+        set_name: card.set || "Set Unknown"
       }
       console.log(newCard)
       addToDB(newCard)

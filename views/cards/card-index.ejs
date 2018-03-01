@@ -1,13 +1,37 @@
 <% include ../partials/boilerplate %>
+      <h1>Your Collection</h1>
+      <table>
+        <tr>
+          <th>Card Name</th>
+          <th>Colors</th>
+          <th>Mana Cost</th>
+          <th>Card Type</th>
+          <th>Attack</th>
+          <th>Defense</th>
+          <th>Rarity</th>
+          <th>Set ID</th>
+          <th>Card Text</th>
+          <th></th>
+        </tr>
+        <% cards.forEach(card => { %>
+          <% const cardLink = "/cards/" + card.id %>
+          <tr>
+            <td><a href=<%= cardLink %>> <%= card.name %></a></td>
+            <td><%= card.colors %></td>
+            <td><%= card.mana_cost %></td>
+            <td><%= card.type %></td>
+            <td><%= card.attack %></td>
+            <td><%= card.defense %></td>
+            <td><%= card.rarity  %></td>
+            <td><%= card.set_name %></td>
+            <td><%= card.card_text %></td>
 
-    <main>
-      <% cards.forEach(card => { %>
-        <% const cardLink = "/cards/" + card.id %>
-      <h1><a href=<%= cardLink %>> <%= card.name %></a></h1>
-      <form action="/cards/<%= card.id %>?_method=Delete" method="Post">
-        <input type="Submit" value="Delete"/>
-      </form>
-      <% }) %>
-    </main>
+          <form action="/cards/<%= card.id %>?_method=Delete" method="Post">
+            <td><input type="Submit" value="Delete"/></td>
+          </form>
+          </tr>
+          <% }) %>
+    </table>
+
 
 <% include ../partials/footer %>

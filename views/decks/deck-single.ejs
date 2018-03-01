@@ -1,14 +1,37 @@
 <% include ../partials/boilerplate %>
 
-    <div>
+
       <h1><%= deck[0].deck_name %></h1>
-
+        <table>
+          <tr>
+            <th>Card Name</th>
+            <th>Number in Deck</th>
+            <th>Colors</th>
+            <th>Mana Cost</th>
+            <th>Card Type</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Rarity</th>
+            <th>Set Code</th>
+            <th>Card Text</th>
+          </tr>
       <% deck.forEach(deck => { %>
-          <h3> <%= deck.name %> </h3>
-
+        <% const cardLink = "/cards/" + deck.id %>
+        <tr>
+          <td><a href=<%= cardLink %>><%= deck.name %></a></th>
+          <td><%=deck.num_in_deck%></td>
+          <td><%=deck.colors%></td>
+          <td><%=deck.mana_cost%></td>
+          <td><%=deck.type%></td>
+          <td><%=deck.attack%></td>
+          <td><%=deck.defense%></td>
+          <td><%=deck.rarity%></td>
+          <td><%=deck.set_name%></td>
+          <td><%=deck.card_text%></td>
+        </tr>
       <% }) %>
-
+        <table>
       <a href='/decks'>Back to Decks</a>
-    </div>
+
 
 <% include ../partials/footer %>

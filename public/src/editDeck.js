@@ -49,7 +49,7 @@ $(()=>{
     $('#tableDiv').append("<th> Attack </th>");
     $('#tableDiv').append("<th> Defense </th>");
     $('#tableDiv').append("<th> Rarity </th>");
-    $('#tableDiv').append("<th> Set Name </th>");
+    $('#tableDiv').append("<th> Set Code </th>");
     $('#tableDiv').append("<th> Card Text </th>");
     $('#tableDiv').append("<th>  </th>");
     $('#tableDiv').append("</tr>");
