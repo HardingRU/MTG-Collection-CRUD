@@ -18,7 +18,7 @@
       <% deck.forEach(deck => { %>
         <% const cardLink = "/cards/" + deck.id %>
         <tr>
-          <td><a href=<%= cardLink %>><%= deck.name %></a></th>
+          <td><a href=<%= cardLink %> class="preview"><%= deck.name %><img src=<%=deck.img_url%> class="hide-image" /></a></th>
           <td><%=deck.num_in_deck%></td>
           <td><%=deck.colors%></td>
           <td><%=deck.mana_cost%></td>

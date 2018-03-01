@@ -55,8 +55,9 @@ $(()=>{
     $('#tableDiv').append("</tr>");
     console.log(data[1]);
     data.forEach(card => {
+      const cardLink = "/cards/" + card.id;
       $('#tableDiv').append("<tr>")
-      $('#tableDiv').append("<td class=deckDiv id=deckDiv" + card.id + ">" + card.name + "</td>");
+      $('#tableDiv').append(`<td class=deckDiv id=deckDiv` + card.id + `><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
       $('#tableDiv').append("<td> " + card.colors + " </td>");
       $('#tableDiv').append("<td> " + card.mana_cost + " </td>");
       $('#tableDiv').append("<td> " + card.type + " </td>");

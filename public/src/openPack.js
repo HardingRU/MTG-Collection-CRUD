@@ -1,12 +1,15 @@
 $(()=>{
 
-
+  console.log("script loaded")
   $("#openPack").on("click", function() {
+    console.log('button clicked')
     const packSelect = $("#setSelect").val();
+    console.log(packSelect)
     $.ajax({
       url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
       method: 'GET',
       success: (data) => {
+        console.log(data)
         processPack(data)
       }
     })
