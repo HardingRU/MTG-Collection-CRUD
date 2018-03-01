@@ -1,13 +1,29 @@
 <% include ../partials/boilerplate %>
 
-<main>
-  <% decks.forEach(deck => { %>
-    <% const deckLink = "/decks/" + deck.id %>
-  <h1><a href=<%= deckLink %>> <%= deck.deck_name %></a></h1>
-  <form action="/decks/<%= deck.id %>?_method=Delete" method="Post">
-    <input type="Submit" value="Delete"/>
-  </form>
-  <% }) %>
-</main>
+
+<table class="table table-hover table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th>Deck Name</th>
+      <th>Deck Description</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+    <% decks.forEach(deck => { %>
+      <% const deckLink = "/decks/" + deck.id %>
+      <tr>
+        <td><a href=<%= deckLink %>> <%= deck.deck_name %></a></td>
+        <td><%= deck.deck_desc %></td>
+        <td><a href="/decks/<%= deck.id %>/edit">Edit Deck
+        </a></td>
+        <td><form action="/decks/<%= deck.id %>?_method=Delete" method="Post">
+          <input type="Submit" class="btn-sm btn-primary"value="Delete"/>
+        </form></td>
+      </tr>
+      <% }) %>
+    </thead>
+</table>
+
 
 <% include ../partials/footer %>

@@ -1,11 +1,38 @@
+body {
+  background-color: rgb(33, 37, 42);
+}
+
 header {
-  background-color: green;
-  color: white;
+  background-color: rgb(33, 37, 42);
 }
 
 footer {
-  background-color: green;
+  background-color: rgb(33, 37, 42);
+}
+h1 {
   color: white;
+}
+
+#topNav {
+  border-bottom-style: solid;
+  border-color: white;
+}
+#descInput {
+    width: 600px;
+}
+
+#bottomNav {
+  border-top-style: solid;
+  border-color:white;
+}
+
+#homeLink {
+  color: white;
+}
+
+
+.btn-primary {
+  margin: 0px
 }
 
 .cardItem {
@@ -39,4 +66,8 @@ table, th, td {
 }
 .preview:hover .hide-image {
   display: block
+}
+
+#createDeck {
+  margin: 50px 0 0 0;
 }

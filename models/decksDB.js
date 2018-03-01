@@ -15,7 +15,7 @@ module.exports = {
   },
 
   createDeck(deck) {
-    return db.one(`INSERT INTO decks (deck_name) VALUES ($[deck_name])RETURNING *`, deck);
+    return db.one(`INSERT INTO decks (deck_name, deck_desc) VALUES ($[deck_name], $[deck_desc])RETURNING *`, deck);
   },
 
   kill(id) {

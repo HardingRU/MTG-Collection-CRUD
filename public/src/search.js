@@ -26,7 +26,7 @@ $(()=>{
       }
       $('#div'+card.multiverseid).append("<img src=" + card.imageUrl +"> </img>")
       $('#div'+card.multiverseid).append("<br>")
-      $('#div'+card.multiverseid).append(`<button type="button" class="addClass" id="` + card.multiverseid + `"> Add Card </button>`)
+      $('#div'+card.multiverseid).append(`<button type="button" class="btn-sm btn-primary addClass" id="` + card.multiverseid + `"> Add Card </button>`)
       $('#'+card.multiverseid).on('click',function(){
         cardToAdd = card.multiverseid;
         $.ajax({
@@ -55,7 +55,6 @@ $(()=>{
         })
       })
       $('#AA'+card.multiverseid).append("</div>")
-      $('body').append("<br>")
     })
   }
 

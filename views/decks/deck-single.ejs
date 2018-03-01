@@ -2,7 +2,8 @@
 
 
       <h1><%= deck[0].deck_name %></h1>
-        <table>
+        <table class="table table-hover table-dark">
+          <thead class="thead-dark">
           <tr>
             <th>Card Name</th>
             <th>Number in Deck</th>
@@ -15,6 +16,7 @@
             <th>Set Code</th>
             <th>Card Text</th>
           </tr>
+        </thead>
       <% deck.forEach(deck => { %>
         <% const cardLink = "/cards/" + deck.id %>
         <tr>
@@ -31,7 +33,7 @@
         </tr>
       <% }) %>
         <table>
-      <a href='/decks'>Back to Decks</a>
+      <a href='/decks/<%=deck[0].deck_id%>/edit'>Edit Deck</a>
 
 
 <% include ../partials/footer %>

@@ -22,7 +22,8 @@ CREATE TABLE cards (
 
 CREATE TABLE decks (
   id SERIAL PRIMARY KEY,
-  deck_name VARCHAR(255)
+  deck_name VARCHAR(255),
+  deck_desc TEXT
 );
 
 CREATE TABLE cards_decks (

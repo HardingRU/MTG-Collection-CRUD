@@ -2,7 +2,12 @@
 
     <form method="POST" action="/decks">
       <input name="deck_name" type="text" placeholder="Deck Name" />
-      <input type="submit" value="Add it!" />
+      <br>
+      <br>
+      <input name="deck_desc" type="text" id="descInput" placeholder="Deck Description" />
+      <br>
+      <br>
+      <input type="submit" value="Create Deck" class="btn-sm btn-primary"/>
     </form>
 
 <% include ../partials/footer %>

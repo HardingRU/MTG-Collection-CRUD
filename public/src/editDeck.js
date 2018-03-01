@@ -38,36 +38,36 @@ $(()=>{
 
 
   const collectionView = data => {
-    $('body').append("<h2> Your Collection </h2>");
-    $('body').append("<div id=tableDiv>")
-    $('#tableDiv').append("<table>");
-    $('#tableDiv').append("<tr>");
-    $('#tableDiv').append("<th> Card Name </th>");
-    $('#tableDiv').append("<th> Color </th>");
-    $('#tableDiv').append("<th> Mana Cost </th>");
-    $('#tableDiv').append("<th> Card Type </th>");
-    $('#tableDiv').append("<th> Attack </th>");
-    $('#tableDiv').append("<th> Defense </th>");
-    $('#tableDiv').append("<th> Rarity </th>");
-    $('#tableDiv').append("<th> Set Code </th>");
-    $('#tableDiv').append("<th> Card Text </th>");
-    $('#tableDiv').append("<th>  </th>");
-    $('#tableDiv').append("</tr>");
-    console.log(data[1]);
+    $('#appendMe').append("<h2> Add Card From Collection </h2>");
+    $('#appendMe').append("<table class='table table-hover table-dark'>");
+    $('#appendMe').append("<thead class='thead-dark'>");
+    $('#appendMe').append("<tr>");
+    $('#appendMe').append("<th> Card Name </th>");
+    $('#appendMe').append("<th> Color </th>");
+    $('#appendMe').append("<th> Mana Cost </th>");
+    $('#appendMe').append("<th> Card Type </th>");
+    $('#appendMe').append("<th> Attack </th>");
+    $('#appendMe').append("<th> Defense </th>");
+    $('#appendMe').append("<th> Rarity </th>");
+    $('#appendMe').append("<th> Set Code </th>");
+    $('#appendMe').append("<th> Card Text </th>");
+    $('#appendMe').append("<th>  </th>");
+    $('#appendMe').append("</tr>");
+    $('#appendMe').append("</thead>");
     data.forEach(card => {
       const cardLink = "/cards/" + card.id;
-      $('#tableDiv').append("<tr>")
-      $('#tableDiv').append(`<td class=deckDiv id=deckDiv` + card.id + `><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
-      $('#tableDiv').append("<td> " + card.colors + " </td>");
-      $('#tableDiv').append("<td> " + card.mana_cost + " </td>");
-      $('#tableDiv').append("<td> " + card.type + " </td>");
-      $('#tableDiv').append("<td> " + card.attack + " </td>");
-      $('#tableDiv').append("<td> " + card.defense + " </td>");
-      $('#tableDiv').append("<td> " + card.rarity + " </td>");
-      $('#tableDiv').append("<td> " + card.set_name + " </td>");
-      $('#tableDiv').append("<td> " + card.card_text + " </td>");
-      $('#tableDiv').append(`<td><button type="button" class="cardToDeck" id="ctd` + card.id + `"> Add Card </button></td>`)
-      $('#tableDiv').append("</tr>")
+      $('#appendMe').append("<tr>")
+      $('#appendMe').append(`<td class=deckDiv id=deckDiv` + card.id + `><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
+      $('#appendMe').append("<td> " + card.colors + " </td>");
+      $('#appendMe').append("<td> " + card.mana_cost + " </td>");
+      $('#appendMe').append("<td> " + card.type + " </td>");
+      $('#appendMe').append("<td> " + card.attack + " </td>");
+      $('#appendMe').append("<td> " + card.defense + " </td>");
+      $('#appendMe').append("<td> " + card.rarity + " </td>");
+      $('#appendMe').append("<td> " + card.set_name + " </td>");
+      $('#appendMe').append("<td> " + card.card_text + " </td>");
+      $('#appendMe').append(`<td><button type="button" class="cardToDeck" id="ctd` + card.id + `"> Add Card </button></td>`)
+      $('#appendMe').append("</tr>")
       $('#ctd'+card.id).on('click',function(){
         const deckAddition = {
           deckToAdd: deckid,
@@ -78,7 +78,6 @@ $(()=>{
       })
     })
     $('#tableDiv').append("</table>")
-    $('body').append("</div>")
 
   }
 

@@ -1,6 +1,7 @@
 <% include ../partials/boilerplate %>
       <h1>Your Collection</h1>
-      <table>
+      <table class="table table-hover table-dark">
+        <thead class="thead-dark">
         <tr>
           <th>Card Name</th>
           <th>Colors</th>
@@ -13,6 +14,7 @@
           <th>Card Text</th>
           <th></th>
         </tr>
+      </thead>
         <% cards.forEach(card => { %>
           <% const cardLink = "/cards/" + card.id %>
           <tr>
