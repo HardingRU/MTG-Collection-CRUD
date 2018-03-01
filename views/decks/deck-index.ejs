@@ -10,6 +10,7 @@
       <th></th>
 
     </tr>
+    </thead>
     <% decks.forEach(deck => { %>
       <% const deckLink = "/decks/" + deck.id %>
       <tr>
@@ -18,11 +19,10 @@
         <td><a href="/decks/<%= deck.id %>/edit">Edit Deck
         </a></td>
         <td><form action="/decks/<%= deck.id %>?_method=Delete" method="Post">
-          <input type="Submit" class="btn-sm btn-primary"value="Delete"/>
+          <input type="Submit" class="btn-sm btn-primary" value="Delete"/>
         </form></td>
       </tr>
       <% }) %>
-    </thead>
 </table>
 
 

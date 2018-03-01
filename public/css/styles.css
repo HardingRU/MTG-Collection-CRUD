@@ -13,6 +13,14 @@ h1 {
   color: white;
 }
 
+h4 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
 #topNav {
   border-bottom-style: solid;
   border-color: white;
@@ -45,6 +53,7 @@ h1 {
 
 #deckH3 {
   display: inline-block;
+  color: white;
 }
 
 .collectionAdd {
@@ -66,8 +75,4 @@ table, th, td {
 }
 .preview:hover .hide-image {
   display: block
-}
-
-#createDeck {
-  margin: 50px 0 0 0;
 }

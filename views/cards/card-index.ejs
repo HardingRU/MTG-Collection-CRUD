@@ -29,7 +29,7 @@
             <td><%= card.card_text %></td>
 
           <form action="/cards/<%= card.id %>?_method=Delete" method="Post">
-            <td><input type="Submit" value="Delete"/></td>
+            <td><input class="btn-sm btn-primary" type="Submit" value="Delete"/></td>
           </form>
           </tr>
           <% }) %>
