@@ -38,14 +38,20 @@ $(()=>{
         num_cards: 1,
         set_name: card.set || "Set Unknown"
       }
-      console.log(newCard)
       addToDB(newCard)
+    })
+    $('#appendMe').append(`<button type="button" class="btn-sm btn-primary addClass" id="addPackButton"> Add Cards to Collection </button>`);
+    $('#addPackButton').on('click',function(){
+      window.location.href="/cards";
     })
   }
 
   const addToDB = newCard => {
     if (newCard.colors){
       newCard.colors = newCard.colors.toString()
+    }
+    else {
+      newCard.colors = "Colorless";
     }
     $.ajax({
       url: '/cards',
