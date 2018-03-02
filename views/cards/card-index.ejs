@@ -1,4 +1,6 @@
 <% include ../partials/boilerplate %>
+
+      <%if(cards[0]) { %>
       <h1>Card Collection</h1>
       <table class="table table-hover table-dark">
         <thead class="thead-dark">
@@ -34,6 +36,8 @@
           </tr>
           <% }) %>
     </table>
-
+    <% } else {%>
+    <h2> You have no cards in your collection!  You can add using <a href="/cards/search">search</a> or by opening a <a href="/cards/pack">pack. </h2>
+    <% } %>
 
 <% include ../partials/footer %>

@@ -5,11 +5,11 @@ const db = pgp(dbConfig);
 
 module.exports = {
   findAll() {
-    return db.many(`SELECT * from decks`);
+    return db.any(`SELECT * from decks`);
   },
 
   findById(id) {
-    return db.many(`SELECT cards_decks.card_id, decks.deck_name, cards.name, cards.id, cards_decks.num_in_deck, cards_decks.deck_id, cards.mana_cost, cards.colors, cards.attack, cards.defense, cards.img_url, cards.rarity, cards.type, cards.set_name, cards.card_text FROM cards INNER JOIN cards_decks ON
+    return db.any(`SELECT cards_decks.card_id, decks.deck_name, cards.name, cards.id, cards_decks.num_in_deck, cards_decks.deck_id, cards.mana_cost, cards.colors, cards.attack, cards.defense, cards.img_url, cards.rarity, cards.type, cards.set_name, cards.card_text FROM cards INNER JOIN cards_decks ON
                    cards.id = cards_decks.card_id INNER JOIN
                    decks ON cards_decks.deck_id=decks.id WHERE decks.id = $1`, id);
   },
@@ -31,7 +31,7 @@ module.exports = {
   },
 
   editNumCards(changes) {
-    return db.many(`UPDATE cards_decks SET num_in_deck = $[number] WHERE card_id = $[card_id] RETURNING * `, changes);
+    return db.any(`UPDATE cards_decks SET num_in_deck = $[number] WHERE card_id = $[card_id] RETURNING * `, changes);
   },
 
   removeCard(card) {

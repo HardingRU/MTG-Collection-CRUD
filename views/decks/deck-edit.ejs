@@ -3,6 +3,7 @@
   <script src="/src/jquery.js"></script>
   <script src="/src/editDeck.js"></script>
   <link rel='stylesheet' type='text/css' href='/css/styles.css'>
+  <% if(data[0]) { %>
       <h1>Edit Deck</h1>
 <!--   <form method="POST" action="/decks/<%= data[0].deck_id %>?_method=PUT"> -->
       <h4>Deck Name: </h4>
@@ -26,6 +27,11 @@
     </table>
       <input type="submit" class="btn-sm btn-primary" id="saveDeck" value="Save Deck" />
 <!--    </form> -->
+    <% } else {%>
+      <h2> No cards currently in deck, please add from collection below: </h2>
+      <br>
+      <br>
+      <% } %>
 
 
 <% include ../partials/footer %>

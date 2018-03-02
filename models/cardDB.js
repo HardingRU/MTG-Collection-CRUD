@@ -5,7 +5,7 @@ const db = pgp(dbConfig);
 
 module.exports = {
   findAll() {
-    return db.many(`SELECT * from cards`);
+    return db.any(`SELECT * from cards`);
   },
 
   save(card) {

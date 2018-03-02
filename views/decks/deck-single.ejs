@@ -1,6 +1,6 @@
 <% include ../partials/boilerplate %>
 
-
+      <% if(deck[0]) { %>
       <h1 id="deckNameSingle"><%= deck[0].deck_name %></h1>
       <a href='/decks/<%=deck[0].deck_id%>/edit'>Edit Deck</a>
         <table class="table table-hover table-dark">
@@ -34,7 +34,11 @@
           <td><%=deck.card_text%></td>
         </tr>
       <% }) %>
-        <table>
+        </table>
+        <% } else {%>
+          <h1> This deck has no cards! </h1>
+          <% } %>
+
 
 
 
