@@ -7,6 +7,7 @@ $(()=>{
 
   $("#saveDeck").on("click", function() {
     let nameGrabber = $("#deckName")
+    console.log("name grabber" + nameGrabber)
     $.ajax({
       url: `/decks/${deckid}`,
       method: 'PUT',
@@ -16,16 +17,30 @@ $(()=>{
     Array.from(cardGrabber).forEach(change => {
       let idLen = change.id.length;
       let changeID = change.id.slice(3, idLen)
-      const changeData = {
-        card_id: changeID,
-        number: change.value
+      if(change.value == 0) {
+        const deleteCard = {
+          card_id: changeID,
+          deck_id: deckid
+        }
+        $.ajax({
+          url: `/decks/removeCard`,
+          method: 'DELETE',
+          data: deleteCard
+        })
       }
-      $.ajax({
-        url: `/decks/saveDeck`,
-        method: 'PUT',
-        data: changeData
-      })
+      else {
+        const changeData = {
+          card_id: changeID,
+          number: change.value
+        }
+        $.ajax({
+          url: `/decks/saveDeck`,
+          method: 'PUT',
+          data: changeData
+        })
+      }
     })
+    window.location.href = currentPage;
   })
 
   $.ajax({

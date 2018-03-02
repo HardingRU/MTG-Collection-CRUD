@@ -31,7 +31,10 @@ module.exports = {
   },
 
   editNumCards(changes) {
-    console.log(changes)
-    return db.one(`UPDATE cards_decks SET num_in_deck = $[number] WHERE card_id = $[card_id] RETURNING * `, changes);
+    return db.many(`UPDATE cards_decks SET num_in_deck = $[number] WHERE card_id = $[card_id] RETURNING * `, changes);
+  },
+
+  removeCard(card) {
+    return db.none('DELETE from cards_decks WHERE deck_id = $[deck_id] AND card_id = $[card_id]', card);
   }
 }

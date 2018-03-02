@@ -69,6 +69,15 @@ module.exports = {
         next();
       })
       .catch(err => next(err));
+  },
+
+  removeCard(req, res, next) {
+    decksDB.removeCard(req.body)
+      .then((deck) => {
+        res.locals.deck = deck;
+        next();
+      })
+      .catch(err => next(err));
   }
 
 

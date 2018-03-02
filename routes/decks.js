@@ -14,6 +14,8 @@ decksRouter.put('/saveDeck', decksController.saveDeck)
 
 decksRouter.get('/new', decksController.makeBlankDeck, viewsController.addDeckForm);
 
+decksRouter.delete('/removeCard', decksController.removeCard)
+
 decksRouter.get('/:id', decksController.getDeck, viewsController.showDeck);
 
 decksRouter.put('/:id', decksController.update, viewsController.updateDeck);
