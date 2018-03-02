@@ -9,7 +9,7 @@ CREATE TABLE cards (
   colors TEXT,
   rarity VARCHAR(255),
   type VARCHAR(255),
-  card_text TEXT[],
+  card_text TEXT,
   attack VARCHAR(255),
   defense VARCHAR(255),
   img_url VARCHAR(255),
@@ -26,6 +26,7 @@ CREATE TABLE decks (
 
 CREATE TABLE cards_decks (
   deck_id INT,
-  card_id INT UNIQUE,
-  num_in_deck INT
+  card_id INT,
+  num_in_deck INT,
+  UNIQUE(deck_id, card_id)
 );

@@ -7,7 +7,6 @@ $(()=>{
       url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
       method: 'GET',
       success: (data) => {
-        console.log(data)
         processPack(data)
       }
     })
