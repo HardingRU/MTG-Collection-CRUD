@@ -24,7 +24,6 @@ $(()=>{
         card.imageUrl = "/assets/default.jpg"
       }
       $('#appendMe').append("<div class=packCard> <img src=" + card.imageUrl +"> </img> </div>")
-
       const newCard = {
         name: card.name,
         mana_cost: card.manaCost || null,
@@ -45,6 +44,9 @@ $(()=>{
   }
 
   const addToDB = newCard => {
+    if (newCard.colors){
+      newCard.colors = newCard.colors.toString()
+    }
     $.ajax({
       url: '/cards',
       method: 'POST',

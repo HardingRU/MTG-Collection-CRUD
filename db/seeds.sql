@@ -1,4 +1,3 @@
-\c mtg;
 
 INSERT INTO decks (deck_name, deck_desc) VALUES ('Primo Deck', 'This deck is the ultimate of decks');
 
