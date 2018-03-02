@@ -1,7 +1,8 @@
 <% include ../partials/boilerplate %>
 
 
-      <h1><%= deck[0].deck_name %></h1>
+      <h1 id="deckNameSingle"><%= deck[0].deck_name %></h1>
+      <a href='/decks/<%=deck[0].deck_id%>/edit'>Edit Deck</a>
         <table class="table table-hover table-dark">
           <thead class="thead-dark">
           <tr>
@@ -34,7 +35,7 @@
         </tr>
       <% }) %>
         <table>
-      <a href='/decks/<%=deck[0].deck_id%>/edit'>Edit Deck</a>
+
 
 
 <% include ../partials/footer %>

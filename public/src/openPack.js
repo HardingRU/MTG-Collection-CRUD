@@ -1,6 +1,7 @@
 $(()=>{
 
   $("#openPack").on("click", function() {
+    console.log("button clicked")
     const packSelect = $("#setSelect").val();
     $.ajax({
       url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
@@ -19,7 +20,7 @@ $(()=>{
     const dataArray = data["cards"];
     dataArray.forEach(card => {
       if(card.imageUrl === undefined) {
-        card.imageUrl = "https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/thumb/f/f8/Magic_card_back.jpg/172px-Magic_card_back.jpg"
+        card.imageUrl = "/assets/default.jpg"
       }
       $('#appendMe').append("<div class=packCard> <img src=" + card.imageUrl +"> </img> </div>")
 

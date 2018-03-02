@@ -22,7 +22,7 @@ $(()=>{
       $('body').append(`<div class="cardItem" id=div`+ card.multiverseid +`>`)
       $('#div'+card.multiverseid).append("<h3> " + card.name + ", " + card.setName+ "</h3>")
       if(card.imageUrl === undefined) {
-        card.imageUrl = "https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/thumb/f/f8/Magic_card_back.jpg/172px-Magic_card_back.jpg"
+        card.imageUrl = "/assets/default.jpg"
       }
       $('#div'+card.multiverseid).append("<img src=" + card.imageUrl +"> </img>")
       $('#div'+card.multiverseid).append("<br>")
