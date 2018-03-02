@@ -9,7 +9,7 @@ module.exports = {
   },
 
   findById(id) {
-    return db.many(`SELECT cards_decks.card_id, decks.deck_name, cards.name, cards_decks.num_in_deck, cards_decks.deck_id, cards.mana_cost, cards.colors, cards.attack, cards.defense, cards.img_url, cards.rarity, cards.type, cards.set_name, cards.card_text FROM cards INNER JOIN cards_decks ON
+    return db.many(`SELECT cards_decks.card_id, decks.deck_name, cards.name, cards.id, cards_decks.num_in_deck, cards_decks.deck_id, cards.mana_cost, cards.colors, cards.attack, cards.defense, cards.img_url, cards.rarity, cards.type, cards.set_name, cards.card_text FROM cards INNER JOIN cards_decks ON
                    cards.id = cards_decks.card_id INNER JOIN
                    decks ON cards_decks.deck_id=decks.id WHERE decks.id = $1`, id);
   },

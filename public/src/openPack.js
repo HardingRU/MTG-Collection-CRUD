@@ -11,8 +11,6 @@ $(()=>{
     })
   })
 
-
-
   const processPack = data => {
     $('div').remove();
     $('br').remove();
@@ -43,7 +41,6 @@ $(()=>{
       addToDB(newCard)
     })
   }
-
 
   const addToDB = newCard => {
     $.ajax({

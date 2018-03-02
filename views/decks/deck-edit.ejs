@@ -9,13 +9,21 @@
       <input id="deckName" name="deck_name" type="text" value="<%= data[0].deck_name %>" />
       <br>
       <br>
-      <br>
-
+      <table class="noBorder table table-hover table-dark">
+        <thead class="thead-dark">
+          <tr>
+            <th>Card Name</th>
+            <th>Number in Deck</th>
+          </tr>
+        </thread>
       <% deck.forEach(deck => { %>
-          <h3 id="deckH3"> <%= deck.name %> </h3>
-          <input class="numCards" name="num_in_deck" id="nid<%= deck.card_id %> " type="text" value="<%= deck.num_in_deck %>" />
-          <br>
+          <% const cardLink = "/cards/" + deck.card_id %>
+          <tr>
+          <td><a href=<%=cardLink%> class="preview"><img src=<%=deck.img_url%> class="hide-image" /> <%= deck.name %> </a></td>
+          <td><input class="numCards" name="num_in_deck" id="nid<%= deck.card_id %> " type="text" value="<%= deck.num_in_deck %>" /></td>
+          </tr>
       <% }) %>
+    </table>
       <input type="submit" class="btn-sm btn-primary" id="saveDeck" value="Save Deck" />
 <!--    </form> -->
 

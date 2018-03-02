@@ -15,12 +15,16 @@ h1 {
 
 h4 {
   color: white;
+  margin: 0px 20px 0px 20px;
+  display: inline;
 }
 
 h2 {
   color: white;
 }
-
+h3 {
+  font-size: 18px;
+}
 #topNav {
   border-bottom-style: solid;
   border-color: white;
@@ -38,6 +42,10 @@ h2 {
   color: white;
 }
 
+input {
+  border: 2px solid;
+  border-color: rgb(0, 107, 255);
+}
 
 .btn-primary {
   margin: 0px
