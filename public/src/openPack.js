@@ -7,6 +7,7 @@ $(()=>{
       url: `https://api.magicthegathering.io/v1/sets/${packSelect}/booster`,
       method: 'GET',
       success: (data) => {
+        console.log(data)
         processPack(data)
       }
     })
@@ -27,7 +28,7 @@ $(()=>{
       const newCard = {
         name: card.name,
         mana_cost: card.manaCost || null,
-        colors: "COLOR",
+        colors: card.colors,
         rarity: card.rarity,
         type: card.type,
         card_text: card.text || null,

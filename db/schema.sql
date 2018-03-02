@@ -8,7 +8,7 @@ CREATE TABLE cards (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   mana_cost VARCHAR(255),
-  colors VARCHAR(255),
+  colors TEXT[],
   rarity VARCHAR(255),
   type VARCHAR(255),
   card_text TEXT,

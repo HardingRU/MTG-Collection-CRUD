@@ -45,10 +45,10 @@ module.exports = {
   },
 
   showDeck(req, res) {
-    console.log(res.locals.deck)
     res.render('decks/deck-single', {
       data: res.locals.deck,
     });
+    
   },
 
   deckCreate(req, res) {

@@ -12,7 +12,7 @@ module.exports = {
     console.log(card)
     return db.one(`
       INSERT INTO cards (name, mana_cost, colors, rarity, type, card_text, attack, defense, img_url, num_cards, api_id, set_name)
-      VALUES ($[name], $[mana_cost], $[colors], $[rarity], $[type], $[card_text], $[attack], $[defense], $[img_url], $[num_cards], $[api_id], $[set_name])
+      VALUES ($[name], $[mana_cost], ARRAY[$[colors]], $[rarity], $[type], $[card_text], $[attack], $[defense], $[img_url], $[num_cards], $[api_id], $[set_name])
       RETURNING *
       `, card);
   },

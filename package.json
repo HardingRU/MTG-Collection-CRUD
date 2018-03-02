@@ -8,6 +8,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+  "engines": {
+    "node": "9.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HardingRU/MTG-Collection-CRUD.git"
