@@ -12,24 +12,30 @@ footer {
 h1 {
   color: white;
   padding: 0 10px 0 10px;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 h4 {
   color: white;
   display: inline;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 h5 {
   color: white;
-  font-size: 13px;
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 h2 {
   color: white;
+  font-family: 'Berkshire Swash', cursive;
 }
 h3 {
   font-size: 18px;
   color: white;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 #topNav {
@@ -68,6 +74,11 @@ input {
 
 .packCard {
   display: inline-block;
+}
+
+#addPackButton {
+  margin: 0px;
+  padding: 142px 30px;
 }
 
 #deckH3 {

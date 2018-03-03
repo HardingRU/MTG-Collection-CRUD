@@ -1,7 +1,7 @@
 
 
 $(()=>{
-
+//uses third party API to search for magic cards, putting the results into function showResults
   $("#searchButton").on("click", function() {
     let searchString = $("#searchInput").val();
     $.ajax({
@@ -13,6 +13,8 @@ $(()=>{
     })
   })
 
+// this function goes through each card returned by the API and puts it on the screen
+// for each card put in browser, creates a button to add this card to the database
   const showResults = data => {
     $('div').remove();
     $('br').remove();
@@ -59,6 +61,7 @@ $(()=>{
     })
   }
 
+// function to add card to database if corresponding button is clicked
 
   const addToDB = newCard => {
     $.ajax({

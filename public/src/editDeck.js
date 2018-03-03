@@ -1,10 +1,15 @@
 $(()=>{
 
-
+// hackish way to figure out which deck is being edited by reading the URL
     const currentPage = window.location.href;
     const sliced = currentPage.slice(35, currentPage.length)
     const deckid = sliced.slice(0, sliced.length-5 )
-//    const deckid = $("#editDeckID").val();
+
+//functionality that runs when user clicks save deck
+//first gets deck name field and saves that to database
+//then gets each card and pulls the number of cards, saving to database
+//checks if the user has changed num of cards for any card to 0, and deletes if so
+//redirects to /decks/ after a user hits save
 
   $("#saveDeck").on("click", function() {
     let nameGrabber = $("#deckName")
@@ -43,6 +48,8 @@ $(()=>{
     window.location.href = "/decks/";
   })
 
+
+//users card index route to get all cards in the collection, passing these cards to collectionView
   $.ajax({
     url: `/cards/data`,
     method: 'GET',
@@ -51,7 +58,7 @@ $(()=>{
     }
   })
 
-
+//takes all cards in returned via call above and puts them into a table, allowing users to add those cards to their deck
   const collectionView = data => {
     $('#appendMe').append("<h2> Add Card From Collection </h2>");
     $('#appendMe').append("<table id='editTable' class='table table-hover table-dark'>");
@@ -96,6 +103,7 @@ $(()=>{
 
   }
 
+//function to add a card to deck if user hits Add Card button
 
   const addToDeck = deckAddition => {
     $.ajax({

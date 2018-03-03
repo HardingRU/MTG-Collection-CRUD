@@ -25,7 +25,7 @@ app.use(methodOverride('_method'));
 
 
 app.get('/', (req, res) => {
-  res.send("Welcome to the index");
+  res.render("index");
 })
 
 app.use('/cards', cardsRouter)
