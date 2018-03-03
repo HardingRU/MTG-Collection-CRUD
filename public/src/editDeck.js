@@ -1,13 +1,13 @@
 $(()=>{
 
 
-  const currentPage = window.location.href;
-  const sliced = currentPage.slice(28, currentPage.length)
-  const deckid = sliced.slice(0, sliced.length-5 )
+    const currentPage = window.location.href;
+//  const sliced = currentPage.slice(28, currentPage.length)
+//  const deckid = sliced.slice(0, sliced.length-5 )
+    const deckid = $("#editDeckID").val();
 
   $("#saveDeck").on("click", function() {
     let nameGrabber = $("#deckName")
-    console.log("name grabber" + nameGrabber)
     $.ajax({
       url: `/decks/${deckid}`,
       method: 'PUT',
