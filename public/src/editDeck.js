@@ -2,9 +2,9 @@ $(()=>{
 
 
     const currentPage = window.location.href;
-//  const sliced = currentPage.slice(28, currentPage.length)
-//  const deckid = sliced.slice(0, sliced.length-5 )
-    const deckid = $("#editDeckID").val();
+    const sliced = currentPage.slice(36, currentPage.length)
+    const deckid = sliced.slice(0, sliced.length-5 )
+//    const deckid = $("#editDeckID").val();
 
   $("#saveDeck").on("click", function() {
     let nameGrabber = $("#deckName")

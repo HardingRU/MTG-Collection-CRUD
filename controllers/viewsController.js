@@ -48,7 +48,7 @@ module.exports = {
     res.render('decks/deck-single', {
       data: res.locals.deck,
     });
-    
+
   },
 
   deckCreate(req, res) {
