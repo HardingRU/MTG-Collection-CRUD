@@ -2,7 +2,7 @@ $(()=>{
 
 
     const currentPage = window.location.href;
-    const sliced = currentPage.slice(36, currentPage.length)
+    const sliced = currentPage.slice(35, currentPage.length)
     const deckid = sliced.slice(0, sliced.length-5 )
 //    const deckid = $("#editDeckID").val();
 
