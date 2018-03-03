@@ -17,10 +17,11 @@ $(()=>{
     $('div').remove();
     $('br').remove();
     $('.addClass').remove();
+    $('#appendMe').append("<br>");
     const dataArray = data["cards"];
     dataArray.forEach(card => {
-      $('body').append(`<div class="cardItem" id=div`+ card.multiverseid +`>`)
-      $('#div'+card.multiverseid).append("<h3> " + card.name + ", " + card.setName+ "</h3>")
+      $('#appendMe').append(`<div class="cardItem" id=div`+ card.multiverseid +`>`)
+      $('#div'+card.multiverseid).append("<h5> " + card.name + "</h5>")
       if(card.imageUrl === undefined) {
         card.imageUrl = "/assets/default.jpg"
       }

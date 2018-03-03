@@ -40,7 +40,7 @@ $(()=>{
         })
       }
     })
-    window.location.href = currentPage;
+    window.location.href = "/decks/";
   })
 
   $.ajax({
