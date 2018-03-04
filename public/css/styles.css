@@ -9,33 +9,34 @@ header {
 footer {
   background-color: rgb(33, 37, 42);
 }
+
 h1 {
   color: white;
   padding: 0 10px 0 10px;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 h4 {
   color: white;
   display: inline;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 h5 {
   color: white;
   font-size: 15px;
   text-align: center;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 h2 {
   color: white;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 h3 {
   font-size: 18px;
   color: white;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 a:visited {
   color: rgb(0, 107, 255);
@@ -125,6 +126,11 @@ table, th, td {
   text-align: center;
   width: 600px;
 }
+
+/*
+circle design found on codepen and modified to fit my needs on the index page:
+https://codepen.io/micjamking/pen/neldj?page=3
+*/
 
 .circle {
   width: 100px;
