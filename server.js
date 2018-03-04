@@ -32,6 +32,10 @@ app.use('/cards', cardsRouter)
 
 app.use('/decks', decksRouter)
 
+app.use('*', (req, res) => {
+  res.render('notfound')
+})
+
 app.listen(PORT, (req, res) => {
   console.log("Listening on Port " + PORT);
 })

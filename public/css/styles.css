@@ -65,7 +65,15 @@ input {
   border-color: rgb(0, 107, 255);
 }
 
+#indexBody {
+  background-color: rgb(33, 37, 42);
+}
 
+.indexH1 {
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 35px;
+}
 
 .cardItem {
   display: inline-block;
@@ -107,4 +115,48 @@ table, th, td {
 }
 .preview:hover .hide-image {
   display: block
+}
+
+#content {
+  margin: 40px auto;
+  text-align: center;
+  width: 600px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  line-height: 200px;
+  border-radius: 50%; /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+}
+
+.white {
+  background-color: white;
+}
+.blue {
+  background-color: blue;
+  margin: 0 0 0 430px;
+}
+.green {
+  background-color: green;
+  margin: 0 0 0 70px;
+  float: left;
+}
+.red {
+  background-color: red;
+  float: left;
+  margin: 0 0 0 140px;
+}
+
+.black {
+  background-color: black;
+  margin: 0 0 0 350px;
 }
