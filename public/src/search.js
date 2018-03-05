@@ -28,7 +28,7 @@ $(()=>{
       }
       else {
       $('#appendMe').append(`<div class="cardItem" id=div`+ i +`>`)
-      $('#div'+i).append("<h5> " + card.name + "</h5>")
+  //    $('#div'+i).append("<h5> " + card.name + "</h5>")
   //    if(card.imageUrl === undefined) {
   //      card.imageUrl = "/assets/default.jpg"
   //    }

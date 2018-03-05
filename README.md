@@ -18,8 +18,8 @@ This allows me to join the databases together when needed to render appropriate 
 Other than that, it's pretty standard MVC approach using Express and JS.
 
 ## Installation / Instructions
-The app is hosted via Heroku: https://mtgoat.herokuapp.com/
-An overview of the app and functionality is available here: https://youtu.be/NdMrGDDVQh4
+- The app is hosted via Heroku: https://mtgoat.herokuapp.com/
+- An overview of the app and functionality is available here: https://youtu.be/NdMrGDDVQh4
 
 ## User Functionality
 - Users can add cards to their collection via two methods: open pack, or add via search.  Both of these use the Magic API below to get the card information and store in database.
@@ -30,5 +30,5 @@ An overview of the app and functionality is available here: https://youtu.be/NdM
 - Users can delete a deck.
 
 ## References
-API Used: https://magicthegathering.io/
-CSS Referenced: https://codepen.io/micjamking/pen/neldj?page=3
+- API Used: https://magicthegathering.io/
+- CSS Referenced: https://codepen.io/micjamking/pen/neldj?page=3
