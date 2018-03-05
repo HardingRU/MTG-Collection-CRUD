@@ -4,10 +4,13 @@ const dbConfig = require('../config/dbConfig');
 const db = pgp(dbConfig);
 
 module.exports = {
+
+  //return every card in the database
   findAll() {
     return db.any(`SELECT * from cards`);
   },
 
+  //save a new card to the database
   save(card) {
     console.log(card)
     return db.one(`
@@ -17,10 +20,12 @@ module.exports = {
       `, card);
   },
 
+  //return a single card based on an ID
   findById(id) {
     return db.one(`SELECT * from cards WHERE id = $1`, id);
   },
 
+  //update a specific card
   update(card) {
     console.log(card);
     return db.one(`
@@ -42,6 +47,7 @@ module.exports = {
       `, card);
   },
 
+  //remove one card from the database
   kill(id) {
     return db.none(`DELETE FROM cards WHERE id = $1`, id);
   }

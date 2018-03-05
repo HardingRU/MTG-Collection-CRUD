@@ -79,7 +79,6 @@ module.exports = {
   },
 
   deckEditRedirect(req, res) {
-    console.log("deck ID ---> " + res.locals.deck.deck_id)
     res.redirect(`/decks/${res.locals.deck.deck_id}/edit`)
   },
 
