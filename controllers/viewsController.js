@@ -60,7 +60,6 @@ module.exports = {
   },
 
   addDeckForm(req, res) {
-    //console.log(res.locals.card);
     res.render('decks/deck-add');
   },
 
