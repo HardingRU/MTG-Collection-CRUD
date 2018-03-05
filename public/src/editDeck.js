@@ -87,7 +87,7 @@ $(()=>{
     data.forEach(card => {
       const cardLink = "/cards/" + card.id;
       $('#editTable').append(`<tr id='editItem${card.id}'>`)
-      $(`#editItem${card.id}`).append(`<td class=deckDiv id=deckDiv><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
+      $(`#editItem${card.id}`).append(`<td class=deckDiv id=deckDiv` + card.id + `><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
       $(`#editItem${card.id}`).append("<td> " + card.colors + " </td>");
       $(`#editItem${card.id}`).append("<td> " + card.mana_cost + " </td>");
       $(`#editItem${card.id}`).append("<td> " + card.type + " </td>");
