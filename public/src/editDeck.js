@@ -3,15 +3,15 @@ $(()=>{
 // hackish way to figure out which deck is being edited by reading the URL
 
 
-/*    const currentPage = window.location.href;
+  /*  const currentPage = window.location.href;
     const sliced = currentPage.slice(35, currentPage.length)
-    const deckid = sliced.slice(0, sliced.length-5 )
-    */
+    const deckid = sliced.slice(0, sliced.length-5 ) */
+
 
 
     const currentPage = window.location.href;
         const sliced = currentPage.slice(28, currentPage.length)
-        const deckid = sliced.slice(0, sliced.length-5 )
+        const deckid = sliced.slice(0, sliced.length-5 ) 
 
 //functionality that runs when user clicks save deck
 //first gets deck name field and saves that to database
