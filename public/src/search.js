@@ -26,7 +26,7 @@ $(()=>{
       if(card.imageUrl === undefined) {
 
       }
-      else {  
+      else {
       $('#appendMe').append(`<div class="cardItem" id=div`+ i +`>`)
       $('#div'+i).append("<h5> " + card.name + "</h5>")
   //    if(card.imageUrl === undefined) {
@@ -59,6 +59,7 @@ $(()=>{
             }
             //need to add function to find set
             addToDB(newCard)
+            window.location.href="/cards"
             window.location.href="/cards"
           }
         })
