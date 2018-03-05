@@ -1,9 +1,17 @@
 $(()=>{
 
 // hackish way to figure out which deck is being edited by reading the URL
-    const currentPage = window.location.href;
+
+
+/*    const currentPage = window.location.href;
     const sliced = currentPage.slice(35, currentPage.length)
     const deckid = sliced.slice(0, sliced.length-5 )
+    */
+
+
+    const currentPage = window.location.href;
+        const sliced = currentPage.slice(28, currentPage.length)
+        const deckid = sliced.slice(0, sliced.length-5 )
 
 //functionality that runs when user clicks save deck
 //first gets deck name field and saves that to database
@@ -79,7 +87,7 @@ $(()=>{
     data.forEach(card => {
       const cardLink = "/cards/" + card.id;
       $('#editTable').append(`<tr id='editItem${card.id}'>`)
-      $(`#editItem${card.id}`).append(`<td class=deckDiv id=deckDiv` + card.id + `><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
+      $(`#editItem${card.id}`).append(`<td class=deckDiv id=deckDiv><a href=` + cardLink + ` class="preview">` + card.name + `<img src=` +card.img_url + ` class="hide-image" /></a></td>`);
       $(`#editItem${card.id}`).append("<td> " + card.colors + " </td>");
       $(`#editItem${card.id}`).append("<td> " + card.mana_cost + " </td>");
       $(`#editItem${card.id}`).append("<td> " + card.type + " </td>");

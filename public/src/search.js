@@ -16,22 +16,28 @@ $(()=>{
 // this function goes through each card returned by the API and puts it on the screen
 // for each card put in browser, creates a button to add this card to the database
   const showResults = data => {
+    let i=0;
     $('div').remove();
     $('br').remove();
     $('.addClass').remove();
     $('#appendMe').append("<br>");
     const dataArray = data["cards"];
     dataArray.forEach(card => {
-      $('#appendMe').append(`<div class="cardItem" id=div`+ card.multiverseid +`>`)
-      $('#div'+card.multiverseid).append("<h5> " + card.name + "</h5>")
       if(card.imageUrl === undefined) {
-        card.imageUrl = "/assets/default.jpg"
+
       }
-      $('#div'+card.multiverseid).append("<img src=" + card.imageUrl +"> </img>")
-      $('#div'+card.multiverseid).append("<br>")
-      $('#div'+card.multiverseid).append(`<button type="button" class="btn-sm btn-primary addClass" id="` + card.multiverseid + `"> Add Card </button>`)
-      $('#'+card.multiverseid).on('click',function(){
-        cardToAdd = card.multiverseid;
+      else {  
+      $('#appendMe').append(`<div class="cardItem" id=div`+ i +`>`)
+      $('#div'+i).append("<h5> " + card.name + "</h5>")
+  //    if(card.imageUrl === undefined) {
+  //      card.imageUrl = "/assets/default.jpg"
+  //    }
+      $('#div'+i).append("<img src=" + card.imageUrl +"> </img>")
+      $('#div'+i).append("<br>")
+      $('#div'+i).append(`<button type="button" class="btn-sm btn-primary addClass" id="` +i +i +i +`"> Add Card </button>`)
+      $('#'+i+i+i).on('click',function(){
+        cardToAdd = card.multiverseid || 9999;
+        console.log(cardToAdd)
         $.ajax({
           url: `https://api.magicthegathering.io/v1/cards/${cardToAdd}`,
           method: 'GET',
@@ -57,7 +63,9 @@ $(()=>{
           }
         })
       })
+      i= i + 1;
       $('#AA'+card.multiverseid).append("</div>")
+    }
     })
   }
 
